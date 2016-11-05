@@ -3,17 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package View;
 
 /**
  *
  * @author ASUS
  */
-public class Sewa1Minggu implements StrategiPenyewaan {
-
-    @Override
-    public double kalkulasiBiaya(long biaya) {
-        return 0.65 * biaya;
-    }
-
+public interface View {
+    
 }
