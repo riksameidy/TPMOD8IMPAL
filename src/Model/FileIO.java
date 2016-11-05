@@ -9,11 +9,6 @@ package Model;
  *
  * @author ASUS
  */
-public class Sewa24Jam implements StrategiPenyewaan{
-
-    @Override
-    public double kalkulasiBiaya(long biaya) {
-        return 0.20 * biaya;
-    }
-    
+public class FileIO {
+    //
 }

@@ -13,7 +13,7 @@ public class Sewa1Minggu implements StrategiPenyewaan {
 
     @Override
     public double kalkulasiBiaya(long biaya) {
-        
+        return 0.35 * biaya;
     }
 
 }

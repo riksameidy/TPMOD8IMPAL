@@ -13,27 +13,30 @@ import java.util.ArrayList;
  */
 public class Member extends Akun{
     
-    private int noMember;
+    private String noMember;
     private ArrayList<Penyewaan> penyewaan;
 
     public Member(String name, String username, String password, int number) {
         super(name, username, password);
-        noMember = number;
+        noMember = "MEM-" + number;
+        penyewaan = new ArrayList<>();
     }
     
-    public int getNoMember() {
+    public String getNoMember() {
         return noMember;
     }
 
-    public void setNoMember(int noMember) {
+    public void setNoMember(String noMember) {
         this.noMember = noMember;
     }
     
     public void sewaMobil(Penyewaan penyewaan){
         //TO DO HERE
+        this.penyewaan.add(penyewaan);
     }
     
-    public Penyewaan getPenyewaan(){
+    public Penyewaan getPenyewaan(int i){
         //TO DO HERE
+        return penyewaan.get(i);
     }
 }

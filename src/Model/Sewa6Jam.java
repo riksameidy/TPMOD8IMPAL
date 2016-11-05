@@ -13,7 +13,7 @@ public class Sewa6Jam implements StrategiPenyewaan{
 
     @Override
     public double kalkulasiBiaya(long biaya) {
-        
+        return biaya;
     }
     
 }

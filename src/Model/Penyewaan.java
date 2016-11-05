@@ -16,6 +16,13 @@ public class Penyewaan {
     
     //Add Constructor Here
 
+    public Penyewaan(StrategiPenyewaan jenisPenyewaan, Mobil mobil) {
+        this.jenisPenyewaan = jenisPenyewaan;
+        this.mobil = mobil;
+        totalBiaya = jenisPenyewaan.kalkulasiBiaya(mobil.getHarga());
+    }
+    
+
     public Mobil getMobil() {
         return mobil;
     }
