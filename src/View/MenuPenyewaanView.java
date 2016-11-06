@@ -5,6 +5,17 @@
  */
 package View;
 
+import model.Mobil;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
 /**
  *
  * @author ASUS
@@ -16,6 +27,10 @@ public class MenuPenyewaanView extends javax.swing.JFrame implements View{
      */
     public MenuPenyewaanView() {
         initComponents();
+        buttonGroup1.add(rd6);
+        buttonGroup1.add(rd12);
+        buttonGroup1.add(rd24);
+        buttonGroup1.add(rd1week);
     }
 
     /**
@@ -27,24 +42,201 @@ public class MenuPenyewaanView extends javax.swing.JFrame implements View{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableSewa = new javax.swing.JTable();
+        rd6 = new javax.swing.JRadioButton();
+        rd12 = new javax.swing.JRadioButton();
+        rd24 = new javax.swing.JRadioButton();
+        rd1week = new javax.swing.JRadioButton();
+        btnSewa = new javax.swing.JButton();
+        btnKembali = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("Menu Penyewaan");
+
+        jLabel2.setText("Pilih mobil");
+
+        jLabel3.setText("Waktu Sewa");
+
+        tableSewa.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Nama", "Kategori", "Jumlah Kursi", "Harga Sewa"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                true, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tableSewa);
+
+        rd6.setText("6 jam");
+
+        rd12.setText("12 jam");
+
+        rd24.setText("24 jam");
+
+        rd1week.setText("1 minggu");
+
+        btnSewa.setText("Sewa");
+
+        btnKembali.setText("Kembali");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(230, 230, 230)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel2)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel3)
+                            .addComponent(rd6)
+                            .addComponent(rd12)
+                            .addComponent(rd24)
+                            .addComponent(rd1week, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnSewa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(rd6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rd12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rd24)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rd1week)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSewa)))
+                .addGap(18, 18, 18)
+                .addComponent(btnKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
+     @Override
+    public void showMessage(String message) {
+        JOptionPane.showMessageDialog(this, message);
+    }
+
+    @Override
+    public void addListener(ActionListener l) {
+        btnKembali.addActionListener(l);
+        btnSewa.addActionListener(l);
+        
+    }
+
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnKembali;
+    private javax.swing.JButton btnSewa;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JRadioButton rd12;
+    private javax.swing.JRadioButton rd1week;
+    private javax.swing.JRadioButton rd24;
+    private javax.swing.JRadioButton rd6;
+    private javax.swing.JTable tableSewa;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnKembali() {
+        return btnKembali;
+    }
+
+    public JButton getBtnSewa() {
+        return btnSewa;
+    }
+
+    public JTable getTableSewa() {
+        return tableSewa;
+    }
+
+    public JRadioButton getRd12() {
+        return rd12;
+    }
+
+    public JRadioButton getRd1week() {
+        return rd1week;
+    }
+
+    public JRadioButton getRd24() {
+        return rd24;
+    }
+
+    public JRadioButton getRd6() {
+        return rd6;
+    }
+    
+    public void initDataTabelSewa(ArrayList<Mobil> mobils){
+        String[] columnNames = {"Nama", "Kategori", "Jumlah Kursi" , "Harga Sewa"};
+        String[][] data = new String[mobils.size()][4];
+        int i = 0;
+        for(Mobil m: mobils){
+            data[i][0] = m.getNama();
+            data[i][1] = m.getKategori().getNama();
+            data[i][2] = String.valueOf(m.getKategori().getJumlahKursi());
+            data[i][3] = String.valueOf(m.getHarga());
+            i++;
+        }
+        tableSewa.setModel(new DefaultTableModel(data, columnNames));
+        tableSewa.changeSelection(0, 0, false, false);
+        rd6.setSelected(true);
+        
+    }
+
+    
+    
+    
+
+    
 }

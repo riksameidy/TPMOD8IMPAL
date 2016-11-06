@@ -5,10 +5,13 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author ASUS
  */
 public interface View {
-    
+    public void showMessage(String message);
+    public void addListener(ActionListener l);
 }

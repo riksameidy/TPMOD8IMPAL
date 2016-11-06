@@ -3,17 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package model;
+
+import java.io.Serializable;
 
 /**
  *
  * @author ASUS
  */
-public class Sewa1Minggu implements StrategiPenyewaan {
+public class Sewa6Jam implements StrategiPenyewaan, Serializable{
 
     @Override
     public double kalkulasiBiaya(long biaya) {
-        return 0.65 * biaya;
+        return biaya;
     }
-
+    
 }

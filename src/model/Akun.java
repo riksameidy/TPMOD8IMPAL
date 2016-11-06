@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package model;
+
+import java.io.Serializable;
 
 /**
  *
  * @author ASUS
  */
-public abstract class Akun {
+public abstract class Akun implements Serializable {
     private String name;
     private String username;
     private String password;

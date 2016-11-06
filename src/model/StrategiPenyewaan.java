@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package model;
 
 /**
  *
  * @author ASUS
  */
-public class FileIO {
-    //
+public interface StrategiPenyewaan {
+    public double kalkulasiBiaya(long biaya);
 }

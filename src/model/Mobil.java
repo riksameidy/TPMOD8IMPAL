@@ -3,18 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package model;
+
+import java.io.Serializable;
 
 /**
  *
  * @author ASUS
  */
-public class Mobil {
+public class Mobil implements Serializable {
     private String nama;
     private long harga;
     private Kategori kategori;
 
-    public Mobil(String nama, long harga, Kategori kategori) {
+    public Mobil(String nama,Kategori kategori , long harga) {
         this.nama = nama;
         this.harga = harga;
         this.kategori = kategori;

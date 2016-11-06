@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package model;
+
+import java.io.Serializable;
 
 /**
  *
  * @author ASUS
  */
-public class Penyewaan {
+public class Penyewaan implements Serializable{
     private StrategiPenyewaan jenisPenyewaan;
     private Mobil mobil;
     private double totalBiaya;

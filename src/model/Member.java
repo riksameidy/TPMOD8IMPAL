@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author ASUS
  */
-public class Member extends Akun{
+public class Member extends Akun implements Serializable{
     
     private String noMember;
     private ArrayList<Penyewaan> penyewaan;
@@ -38,5 +39,9 @@ public class Member extends Akun{
     public Penyewaan getPenyewaan(int i){
         //TO DO HERE
         return penyewaan.get(i);
+    }
+    
+    public ArrayList<Penyewaan> getListPenyewaans(){
+        return penyewaan;
     }
 }
